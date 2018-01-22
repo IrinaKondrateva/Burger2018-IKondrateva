@@ -1,0 +1,18 @@
+//config
+
+@import "config/mixins.scss";
+@import "config/variables.scss";
+
+
+//allpages
+
+@import "layout/font.scss";
+@import "layout/allpages.scss";
+
+//section
+
+@import "section/burgers.scss";
+@import "section/best.scss";
+@import "section/opinions.scss";
+@import "section/footer.scss";
+@import "section/aside.scss";

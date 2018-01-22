@@ -1,0 +1,331 @@
+@font-face {
+  font-family: 'Lifehack';
+  src: url("../fonts/Lifehack/lifehack_medium-webfont.woff2") format("woff2"), url("../fonts/Lifehack/lifehack_medium-webfont.woff") format("woff"), url("../fonts/Lifehack/lifehack_medium-webfont.svg#lifehackmedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gagalin';
+  src: url("../fonts/Gagalin/gagalin-regular-webfont.woff2") format("woff2"), url("../fonts/Gagalin/gagalin-regular-webfont.woff") format("woff"), url("../fonts/Gagalin/gagalin-regular-webfont.svg#gagalinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu/ubuntu-b-webfont.woff2") format("woff2"), url("../fonts/Ubuntu/ubuntu-b-webfont.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-b-webfont.svg#ubuntubold") format("svg");
+  font-weight: bolder;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu/ubuntu-light-webfont.woff2") format("woff2"), url("../fonts/Ubuntu/ubuntu-light-webfont.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-light-webfont.svg#ubuntulight") format("svg");
+  font-weight: light;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu/ubuntu-medium-webfont.woff2") format("woff2"), url("../fonts/Ubuntu/ubuntu-medium-webfont.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-medium-webfont.svg#ubuntumedium") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu/ubuntu-regular-webfont.woff2") format("woff2"), url("../fonts/Ubuntu/ubuntu-regular-webfont.woff") format("woff"), url("../fonts/Ubuntu/ubuntu-regular-webfont.svg#ubunturegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+*, *::after {
+  /* outline: 1px solid black; */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+  font-family: "Ubuntu", Arial, sans-serif; }
+
+h1, h2, p {
+  padding: 0;
+  margin: 0; }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+.wrapper {
+  width: 100%; }
+
+.pagecontent {
+  min-width: 960px;
+  min-height: 650px; }
+
+.section {
+  width: 100%;
+  height: 100%;
+  min-width: 960px;
+  min-height: 650px;
+  position: relative; }
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.button {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #e45028;
+  color: #fff;
+  /* font: normal 13px/1.42 'Ubuntu'; */
+  font: normal 14px/1.714 "Ubuntu";
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+  .button:hover {
+    background-color: #f7a10a; }
+
+.text {
+  font: normal 14px/1.714 "Ubuntu";
+  color: #fff; }
+
+.burger {
+  background: url("../images/bg/bgimage1.png") no-repeat;
+  background-size: cover; }
+
+.header {
+  width: 107%;
+  padding-top: 11px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.header__left {
+  margin-right: auto; }
+
+.header__nav {
+  padding-right: 20px;
+  padding-bottom: 6px; }
+
+.nav__item {
+  display: inline-block;
+  vertical-align: middle; }
+  .nav__item:after {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+    content: ' ';
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff; }
+  .nav__item:last-child:after {
+    display: none; }
+
+.nav__link {
+  display: inline-block;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color: #fff; }
+
+.burger__content {
+  width: 103%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* flex-wrap: wrap; */ }
+
+.burger__pic {
+  width: 50%; }
+
+.burger__info {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+.section__title {
+  width: 90%;
+  height: 80%;
+  padding-left: 10px;
+  padding-top: 22px;
+  color: #f9b43b;
+  font: 72px/1.181 "Gagalin", "Arial"; }
+
+.section__minititle {
+  width: 90%;
+  padding-left: 10px;
+  width: 100%;
+  font: 62px/0.92 "Lifehack"; }
+
+.header__btn {
+  padding-bottom: 6px; }
+
+.best {
+  background: url("../images/bg/bgimage2.png") no-repeat;
+  background-size: cover; }
+
+.section__title--best {
+  color: #2f3234;
+  text-align: center;
+  padding-top: 13.5%; }
+
+.best__list {
+  width: 85.45%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 3.6%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  text-align: center; }
+  .best__list li {
+    width: 31.9%; }
+
+.section__minititle--best {
+  font-size: 24px;
+  line-height: 1.167;
+  color: #2f3234;
+  padding-top: 9%; }
+
+.text--best {
+  color: #2f3234;
+  padding: 5% 3.5%;
+  text-align: justify; }
+
+.best__pic--natural {
+  margin-bottom: 10px; }
+
+.opinions {
+  width: 100%; }
+
+.opinios__list {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+  align-content: center; }
+
+.opinions__item {
+  width: 25%;
+  height: 50%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 25%;
+  flex: 1 1 25%;
+  position: relative; }
+  .opinions__item:hover .opinions__photo {
+    -webkit-filter: grayscale(100%) brightness(50%);
+    filter: grayscale(100%) brightness(50%); }
+  .opinions__item:hover .opinions__info {
+    opacity: 1; }
+
+.opinions__photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center; }
+
+.opinions__info {
+  width: 100%;
+  height: 100%;
+  padding: 45px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; }
+
+.opinions__title {
+  font: 14px/1.181 "Gagalin", "Arial";
+  text-align: left;
+  margin-bottom: 10px; }
+
+.opinions__text {
+  font-weight: light;
+  line-height: 1.75;
+  text-align: left;
+  overflow: hidden;
+  max-height: 150px;
+  padding-top: 12px; }
+
+.button__gray {
+  margin-top: 17px;
+  margin-left: 1.5px;
+  width: 110px;
+  background-color: #2f3234; }
+
+.scroll {
+  bottom: 3.2%;
+  right: 48%;
+  position: absolute; }
+
+.sidebar {
+  position: fixed;
+  top: 13.3%;
+  left: 94.5%; }
+
+.sidebar__link {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 21px;
+  height: 21px;
+  text-align: center; }
+  .sidebar__link:hover {
+    background: url("../images/content/circle.svg") no-repeat;
+    background-position: 50%; }

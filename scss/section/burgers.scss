@@ -1,0 +1,88 @@
+.burger {
+	background: url("../images/bg/bgimage1.png") no-repeat;
+	background-size: cover;
+}
+
+.header {
+	width: 107%;
+	padding-top: 11px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__left {
+	margin-right: auto;
+}
+
+.header__nav {
+	padding-right: 20px;
+	padding-bottom: 6px;
+}
+
+.nav__item {
+	display: inline-block;
+	vertical-align: middle;
+	&:after {
+		display: inline-block;
+		margin: 0 10px;
+		vertical-align: middle;
+		content: ' ';
+		@include circle(4px, $white);
+	}
+	&:last-child:after {
+		display: none;
+	}
+}
+
+.nav__link {
+	display: inline-block;
+	text-transform: uppercase;
+	vertical-align: middle;
+	color: $white;
+}
+
+.burger__content {
+	width: 103%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* flex-wrap: wrap; */
+}
+
+.burger__pic {
+	width: 50%;
+}
+
+.burger__info {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;	
+}
+
+.section__title {
+	width: 90%;
+	height: 80%;
+	padding-left: 10px;
+	padding-top: 22px;
+	color: $orange;
+	font: 72px/1.181 "Gagalin", "Arial";
+}
+
+.section__minititle {
+	width: 90%;
+	padding-left: 10px;
+	
+	width: 100%;
+	font: 62px/0.92 "Lifehack";
+}
+
+.header__btn {
+	padding-bottom: 6px;
+}
+
+
+
+
