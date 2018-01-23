@@ -4,20 +4,23 @@
 }
 
 .header {
-	width: 107%;
-	padding-top: 11px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding-top: 10.5px; 
 }
 
 .header__left {
 	margin-right: auto;
+	padding-left: 6px;
 }
 
-.header__nav {
-	padding-right: 20px;
-	padding-bottom: 6px;
+.header__center {
+	padding-right: 17px;
+}
+
+.nav__list {
+	width: 510px;
 }
 
 .nav__item {
@@ -39,11 +42,13 @@
 	display: inline-block;
 	text-transform: uppercase;
 	vertical-align: middle;
-	color: $white;
+}
+
+.header__right {
+	padding-right: 15px; 
 }
 
 .burger__content {
-	width: 103%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -51,38 +56,37 @@
 }
 
 .burger__pic {
-	width: 50%;
+	flex: 1 1 50%;
+	text-align: right;
 }
 
 .burger__info {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;	
+	flex: 1 1 50%;
+	padding-top: 30px;
+}
+
+.burger__img {
+	width: 94%;
+	max-width: 480px;
+	margin-right: 5px;  
 }
 
 .section__title {
-	width: 90%;
-	height: 80%;
 	padding-left: 10px;
-	padding-top: 22px;
+	padding-top: 23px;
 	color: $orange;
 	font: 72px/1.181 "Gagalin", "Arial";
 }
 
 .section__minititle {
-	width: 90%;
-	padding-left: 10px;
-	
-	width: 100%;
-	font: 62px/0.92 "Lifehack";
+	padding-left: 8px;
+	padding-top: 20px;
+	font: 62px/1 "Lifehack";
 }
 
-.header__btn {
-	padding-bottom: 6px;
+.scroll {
+	text-align: center;
+	padding-top: 82px;
 }
-
-
 
 

@@ -1,19 +1,33 @@
 .sidebar {
 	position: fixed;
-    top: 13.3%;
-    left: 94.5%;
+    top: 94px;
+    left: 94%;
+}
+
+.sidebar__nav {
+    height: 162px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar__item {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+     &:hover {
+        border: 1px solid $white;
+        border-radius: 50%;
+    }
 }
 
 .sidebar__link {
-    padding: 0;
-    margin: 0;
-	display: block;
-    width: 21px;
-    height: 21px;
-    text-align: center;
-    &:hover {
-    	background: url("../images/content/circle.svg") no-repeat;
-        background-position: 50%;
-    }
+    width: 25%;
+    height: 25%;
+    margin: 37.5%;
+    display: block;
+    background-color: $white;
+    border-radius: 50%;
 }
 
