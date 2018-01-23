@@ -65,7 +65,7 @@ a {
 
 .container {
   width: 87.27%;
-  /* max-width: 960px; */
+  max-width: 960px;
   margin: 0 auto; }
 
 .button {
