@@ -7,7 +7,7 @@
 @import "config/variables.scss";
 @import "config/functions.scss";
 
-//allpages
+//layout
 
 @import "layout/font.scss";
 @import "layout/allpages.scss";
@@ -22,3 +22,8 @@
 @import "section/order.scss";
 @import "section/contacts.scss";
 @import "section/aside.scss";
+
+//blocks
+
+@import "blocks/humburger-menu.scss";
+

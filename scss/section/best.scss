@@ -1,5 +1,5 @@
 .best {
-	background: url("../images/bg/bgimage2.png") center center no-repeat;
+	background: url("../images/bg/bgimage2.png") center bottom no-repeat;
 	background-size: cover;
 }
 
@@ -10,35 +10,74 @@
 .section__title--best {
 	color: $black;
 	text-align: center;
-	padding-top: 12.1%;
+	padding-top: 18vh;
+
+	@include tablets {
+		padding-top: 23vh;
+	}
+
+	@include phones {
+		padding-top: 13vh;
+		font-size: rem(50px);
+	}
 }
 
 .best__list {
-	padding-top: 3.6%;
+	padding-top: rem(40px);
 	display: flex;
 	justify-content: space-around;
 	align-items: baseline;
 	text-align: center;
+
+	@include phones {
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: stretch;
+		text-align: left;
+		padding-top: 0;
+	}
 }
 
 .best__item {
 	width: 31.25%;
 	max-width: rem(320px);
+
+	@include phones {
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+	}
+}
+
+.best__pic {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include phones {
+		justify-content: flex-start;
+		min-width: rem(130px);
+	}
 }
 
 .section__minititle--best {
 	font-size: rem(24px);
 	color: $black;
-	padding-top: 9%;
+	padding-top: rem(30px);
 	line-height: 1.161;
 }
 
 .best__descr {
 	color: $black;
 	padding: 5% 3.5%;
-	align-text: justify;
+	text-align: justify;
 	max-height: rem(150px);
 	overflow: hidden;
+
+	@include phones {
+		padding: 5% 0;
+		text-align: left;
+	}
 }
 
 .best__pic--natural {

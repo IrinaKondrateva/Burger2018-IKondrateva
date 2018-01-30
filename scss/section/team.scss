@@ -11,23 +11,33 @@
 	bottom: 0;
 	background-color: rgba(#2f3234, .93);
 	align-items: center;
+
+	@include tablets {
+		width: 100%;
+	}
 }
 
 .team__info {
-	margin-top: rem(50px);
 	width: 65.5%;
+	padding-left: rem(10px);
+
+	@include tablets {
+		text-align: center;
+	}
 }
 
 .section__title--team {
-	margin-bottom: rem(30px);
+	padding-top: rem(30px);
+	padding-bottom: rem(27px);
 }
 
 .team__accordion-item {
-	margin-bottom: rem(25px);
+	margin-bottom: rem(17px);
 }
 
 .team__accordion-item--active {
-	
+	margin-bottom: rem(35px);
+
 	.team__accordion-content {
 			height: auto;
 		}
@@ -42,6 +52,7 @@
 }
 
 .team__accordion-trigger {
+	display: block;
 	font-family: "Gagalin", "Arial";
 	font-size: rem(14px);
 	line-height: 2.008;
@@ -56,6 +67,10 @@
 		border-top-color: $orange;
 		border-bottom-width: 0;
 	}
+
+	@include tablets {
+		font-size: rem(24px);
+	}
 }
 
 .team__accordion-content {
@@ -63,6 +78,12 @@
 	height: 0;
 	overflow: hidden;
 	margin-top: rem(10px);
+
+	@include tablets {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .team__accordion-pic {
@@ -85,5 +106,9 @@
 }
 
 .team__accordion-text-content {
-	padding-top: rem(11px);
+	padding-top: rem(8px);
+	
+	@include tablets {
+		max-width: rem(348px);
+	}
 }

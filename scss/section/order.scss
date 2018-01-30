@@ -3,18 +3,47 @@
 	background-size: cover;
 }
 
+.order__container {
+
+	@include tablets {
+		justify-content: flex-start;
+	}	
+}
+
 .section__title--order {
 	text-align: center;
+
+	@include tablets {
+		padding-top: rem(138px);
+	}	
+
+	@include phones {
+		padding-top: rem(55px);
+	}
 }
 
 .form {
 	display: flex;
-	flex-wrap: wrap;	
+	
+	@include tablets {
+		flex-direction: column;
+		margin: rem(37px) auto 0;
+		max-width: rem(472px);
+		max-height: 49.8%;
+	}	
+
+	@include tablets {
+		margin: rem(27px) auto 0;
+	}	
 }
 
 .order__customer, .order__extrainfo {
 	flex: 1;
 	padding: rem(30px) rem(10px) 0;
+
+	@include tablets {
+		padding: 0;
+	}	
 }
 
 .order__customer-info {
@@ -38,13 +67,27 @@ label {
 	&--comm {
 		margin-right: 0;
 	}
+
+	&--floor {
+
+		@include phones {
+			display: none;
+		}	
+	}
+
+	&--apart {
+
+		@include phones {
+			margin-right: 0;
+		}	
+	}
 }
 
 .form__block-input {
 	width: 100%;
 	border: none;
 	border-radius: rem(5px);
-	padding: rem(10px);
+	padding: rem(10px) rem(23px);
 	
 	&:focus {
 		border: rem(1px) solid #d1cfcb;
@@ -56,7 +99,17 @@ label {
 	margin-bottom: rem(17px);
 
 	&__option {
-	padding-right: rem(20px);
+		padding-right: rem(20px);
+
+		@include phones {
+			padding-right: rem(0px);
+		}
+	} 
+
+	@include phones {
+		margin-top: rem(17px);
+		justify-content: center;
+		margin-bottom: rem(30px);
 	}
 }
 
@@ -97,19 +150,23 @@ label {
 .form__select-btn--check {
 	display: inline-block;
 	position: relative;
-	width: rem(12px);
-	height: rem(12px);
+	width: rem(10px);
+	height: rem(10px);
 	background-color: $white; 
 	
 	&:after {
 		content: "";
 		display: inline-block;
 		position: absolute;
-		width: 90%;
-		height: 90%;
-		background: url("../images/content/check.png") center center no-repeat;
+		width: 80%;
+		height: 80%;
+		background: url("../images/content/check.png") 20% 20% no-repeat;
 		background-size: cover;
 		opacity: 0;
+
+			@include phones {
+				transform: translate(-50%, 0);
+		}
 	}
 }
 
@@ -125,6 +182,21 @@ label {
 
 .order__callback {
 	margin-bottom: rem(14px);
+
+	@include tablets {
+		margin-bottom: rem(34px);
+	}
+
+	@include phones {
+		text-align: center;
+	}
+}
+
+.order__btn {
+
+	@include phones {
+		text-align: center;
+	}
 }
 
 .button__red-inform {

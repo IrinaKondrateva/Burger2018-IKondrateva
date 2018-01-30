@@ -21,6 +21,12 @@
 			transform: scale(1, 1);
 		}
 	}
+
+	@include tablets {
+		width: 50%;
+		height: 25%;
+		flex: 1 1 50%;
+	}
 }
 
 .opinions__photo {
@@ -41,27 +47,74 @@
 	opacity: 0;
 	transition: 0.7s;
 	transform: scale(0.8, 0.8);
+	
+	@include tablets {
+		text-align: center;
+		padding: rem(30px) rem(47px);
+	}
 }
 
 .opinions__title {
 	font-family: "Gagalin", "Arial";
 	font-size: rem(14px);
-	line-height: 2.008;
-	margin-bottom: rem(10px);
+	line-height: 1.5;
+	margin-bottom: rem(17px);
+
+	@include tablets {
+		line-height: 0.65;
+	}
+
+	@include phones {
+		line-height: 1.2;
+		font-size: rem(24px);
+	}
 }
 
 .opinions__text {
 	font-weight: light;
 	line-height: 1.75;
-	text-align: left;
 	overflow: hidden;
 	max-height: rem(150px);
-	padding-top: rem(12px);
+
+	@include tablets {
+		max-height: rem(80px);
+	}
+	
+	@include phones {
+		display: none;
+	}
 }
 
 .button__gray {
-	margin-top: rem(17px);
+	position: relative;
+	margin-top: rem(12px);
 	margin-left: rem(1.5px);
 	width: rem(110px);
 	background-color: $grey;
+
+	@include tablets {
+		margin-top: rem(20px);
+		margin-left: rem(0px);
+	}
+
+	@include phones {
+		margin-top: rem(6px);
+	}
+
+	&:after {
+		content: "читать отзыв";
+		display: inline-block;
+		padding: rem(4px) rem(15px);
+		border-radius: rem(8px);
+		width: rem(126px);
+		background-color: $grey;
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+
+		@include phones {
+			opacity: 1;
+		}
+	}
 }

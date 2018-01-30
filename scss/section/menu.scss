@@ -10,9 +10,20 @@
 }
 
 .section__title--menu {
+	position: relative;
+	z-index: 100;
 	padding-top: rem(95px);
 	padding-left: rem(95px);
 	color: $white;
+
+	@include tablets {
+		padding-left: rem(0px);
+	}
+
+	@include phones {
+		padding-top: rem(45px);
+		padding-left: rem(35px);
+	}
 }
 
 .menu__info {
@@ -74,9 +85,9 @@
 	overflow: hidden;
 }
 
-.menu__accordion-content--active {
+/* .menu__accordion-content--active {
 	width: auto;
-}
+} */
 
 .menu__accordion-content__text {
 	padding: rem(20px);

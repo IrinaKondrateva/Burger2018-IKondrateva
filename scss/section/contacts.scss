@@ -19,6 +19,11 @@
 	height: rem(58px);
 	margin-top: rem(-58px);
 	background-color: #121212;
+
+	@include phones {
+		height: rem(115px);
+		margin-top: rem(-115px);
+	}
 }
 
 .footer__container {
@@ -28,10 +33,27 @@
 	display: flex;
 	align-items: center;
 	padding: 0 rem(6px);
+
+	@include tablets {
+		max-width: rem(720px);
+	}
+	
+	@include phones {
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
 }
 
 .footer__info {
 	flex: 1;
+
+	@include phones {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .footer__info-tel {
@@ -47,4 +69,11 @@
 .footer__socials {
 	flex: 1;
 	text-align: right;
+
+	@include phones {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
