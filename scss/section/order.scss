@@ -1,0 +1,138 @@
+.order {
+	background: url("../images/bg/bgorder.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.section__title--order {
+	text-align: center;
+}
+
+.form {
+	display: flex;
+	flex-wrap: wrap;	
+}
+
+.order__customer, .order__extrainfo {
+	flex: 1;
+	padding: rem(30px) rem(10px) 0;
+}
+
+.order__customer-info {
+	margin-bottom: rem(16px);
+	display: flex;	
+}
+
+label {
+	cursor: pointer;
+}
+
+.form__block {
+	display: block;
+	flex: 1;
+	margin-right: rem(20px);
+	
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&--comm {
+		margin-right: 0;
+	}
+}
+
+.form__block-input {
+	width: 100%;
+	border: none;
+	border-radius: rem(5px);
+	padding: rem(10px);
+	
+	&:focus {
+		border: rem(1px) solid #d1cfcb;
+	}
+}
+
+.order__pay {
+	display: flex;
+	margin-bottom: rem(17px);
+
+	&__option {
+	padding-right: rem(20px);
+	}
+}
+
+.form__select-input {
+	position: absolute;
+	visibility: hidden;
+}
+
+.form__select-input:checked + .form__select-btn:after {
+	opacity: 1;
+}
+
+.form__select-input:checked + .form__select-btn--check:after {
+	opacity: 1;
+}
+
+.form__select-btn {
+	display: inline-block;
+	position: relative;
+	width: rem(12px);
+	height: rem(12px);
+	border-radius: 50%;
+	background-color: $white; 
+
+	&:after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 50%;
+		height: 50%;
+		border-radius: 50%;
+		background-color: $red;
+		transform: translate(50%, 50%);
+		opacity: 0;
+		}
+	}
+
+.form__select-btn--check {
+	display: inline-block;
+	position: relative;
+	width: rem(12px);
+	height: rem(12px);
+	background-color: $white; 
+	
+	&:after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 90%;
+		height: 90%;
+		background: url("../images/content/check.png") center center no-repeat;
+		background-size: cover;
+		opacity: 0;
+	}
+}
+
+.form__select-title {
+	display: inline-block;
+	text-indent: rem(5px);
+}
+
+.form__block-input--textarea {
+	height: rem(110px);
+	margin-bottom: rem(10px);
+}
+
+.order__callback {
+	margin-bottom: rem(14px);
+}
+
+.button__red-inform {
+	border: none;
+}
+
+.button__nobground {
+	background-color: transparent; 
+	border: none;
+	text-transform: none;
+}

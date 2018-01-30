@@ -1,8 +1,11 @@
+//normalize
+@import "layout/normalize.scss";
+
 //config
 
 @import "config/mixins.scss";
 @import "config/variables.scss";
-
+@import "config/functions.scss";
 
 //allpages
 
@@ -14,4 +17,8 @@
 @import "section/burgers.scss";
 @import "section/best.scss";
 @import "section/opinions.scss";
+@import "section/team.scss";
+@import "section/menu.scss";
+@import "section/order.scss";
+@import "section/contacts.scss";
 @import "section/aside.scss";

@@ -1,0 +1,83 @@
+.menu {
+	background: url("../images/bg/bgmenu.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.menu__container {
+	max-width: 100%;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.section__title--menu {
+	padding-top: rem(95px);
+	padding-left: rem(95px);
+	color: $white;
+}
+
+.menu__info {
+	width: 70%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.menu__accordion {
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.menu__accordion-item {
+	display: flex;
+	background-color: rgba(#2f3234, .93);
+}
+
+.menu__accordion-trigger {
+	align-self: flex-end; 
+	width: rem(80px);
+	height: 100%;
+	color: $white;
+	font-family: "Gagalin", "Arial";
+	font-size: rem(40px);
+	line-height: 1.181;
+	background: url("../images/content/eatmeat.jpg") center center no-repeat;
+	background-size: cover; 
+
+	&--veg {
+		background: url("../images/content/veg.jpg") center center no-repeat;
+		background-size: cover;
+	}
+
+	&--diet {
+		background: url("../images/content/diet.jpg") center center no-repeat;
+		background-size: cover;
+	}
+}
+
+.menu__accordion-trigger__text {
+	position: relative;
+	top: 100%;
+	height: rem(80px);  
+	display: block;
+	min-width: rem(650px);
+	transform-origin: 0% 0%;
+	transform: rotate(-90deg);
+	text-indent: rem(40px);
+	line-height: 2;
+	color: $white;
+}
+
+.menu__accordion-content {
+	width: 0;
+	overflow: hidden;
+}
+
+.menu__accordion-content--active {
+	width: auto;
+}
+
+.menu__accordion-content__text {
+	padding: rem(20px);
+}

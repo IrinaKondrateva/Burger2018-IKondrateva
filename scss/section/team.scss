@@ -1,0 +1,89 @@
+.team {
+	background: url("../images/bg/bgteam.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.team__container {
+	width: 50%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(#2f3234, .93);
+	align-items: center;
+}
+
+.team__info {
+	margin-top: rem(50px);
+	width: 65.5%;
+}
+
+.section__title--team {
+	margin-bottom: rem(30px);
+}
+
+.team__accordion-item {
+	margin-bottom: rem(25px);
+}
+
+.team__accordion-item--active {
+	
+	.team__accordion-content {
+			height: auto;
+		}
+
+	.team__accordion-trigger {
+		color: $orange;
+
+		&:before {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.team__accordion-trigger {
+	font-family: "Gagalin", "Arial";
+	font-size: rem(14px);
+	line-height: 2.008;
+	color: $white;
+	
+	&:before {
+		content: "";
+		width: 0;
+		height: 0;
+		display: inline-block;
+		border: rem(5px) solid transparent;
+		border-top-color: $orange;
+		border-bottom-width: 0;
+	}
+}
+
+.team__accordion-content {
+	display: flex;
+	height: 0;
+	overflow: hidden;
+	margin-top: rem(10px);
+}
+
+.team__accordion-pic {
+	min-width: rem(100px);
+	max-width: rem(100px);
+	height: rem(100px);
+	overflow: hidden;
+	border-radius: 50%;
+	border: rem(1px) solid transparent;
+	margin: 0 rem(17px);
+}
+
+.team__accordion-photo {
+	position: relative;
+	right: rem(17px);
+}
+
+.team__accordion-text-title {
+	font-weight: bold;
+}
+
+.team__accordion-text-content {
+	padding-top: rem(11px);
+}

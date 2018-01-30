@@ -1,13 +1,16 @@
 .best {
-	background: url("../images/bg/bgimage2.png") no-repeat;
+	background: url("../images/bg/bgimage2.png") center center no-repeat;
 	background-size: cover;
+}
+
+.best__container {
+	justify-content: flex-start;
 }
 
 .section__title--best {
 	color: $black;
 	text-align: center;
 	padding-top: 12.1%;
-	padding-left: 0;
 }
 
 .best__list {
@@ -16,28 +19,28 @@
 	justify-content: space-around;
 	align-items: baseline;
 	text-align: center;
-	li {
-		width: 31.25%;
-		max-width: 320px;
-	}
+}
+
+.best__item {
+	width: 31.25%;
+	max-width: rem(320px);
 }
 
 .section__minititle--best {
-	font-size: 24px;
-	line-height: 1.167;
+	font-size: rem(24px);
 	color: $black;
 	padding-top: 9%;
+	line-height: 1.161;
 }
 
-.text--best {
+.best__descr {
 	color: $black;
 	padding: 5% 3.5%;
-	text-align: center;
-	line-height: 2;
-	max-height: 150px;
+	align-text: justify;
+	max-height: rem(150px);
 	overflow: hidden;
 }
 
 .best__pic--natural {
-	padding-bottom: 6px;
+	padding-bottom: rem(6px);
 }
