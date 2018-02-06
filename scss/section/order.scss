@@ -90,7 +90,7 @@ label {
 	padding: rem(10px) rem(23px);
 	
 	&:focus {
-		border: rem(1px) solid #d1cfcb;
+		outline: rem(1px) solid orange;
 	}
 }
 

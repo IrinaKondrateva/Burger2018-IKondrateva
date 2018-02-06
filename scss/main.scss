@@ -10,15 +10,17 @@
 //layout
 
 @import "layout/font.scss";
+@import "layout/iconfont.scss";
 @import "layout/allpages.scss";
 
 //section
 
 @import "section/burgers.scss";
 @import "section/best.scss";
-@import "section/opinions.scss";
+@import "section/slider.scss";
 @import "section/team.scss";
 @import "section/menu.scss";
+@import "section/opinions.scss";
 @import "section/order.scss";
 @import "section/contacts.scss";
 @import "section/aside.scss";
@@ -26,4 +28,6 @@
 //blocks
 
 @import "blocks/humburger-menu.scss";
-
+@import "blocks/nav-mobile.scss";
+@import "blocks/composition.scss";
+@import "blocks/kkal.scss";

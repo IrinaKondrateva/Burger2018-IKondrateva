@@ -18,6 +18,10 @@ body {
 	font-size: rem(14px);
 	line-height: 1.714;
 	font-weight: light;
+
+	&::-webkit-scrollbar {
+		width: rem(0px);
+	}
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -33,6 +37,10 @@ ul {
 
 a {
 	text-decoration: none;
+}
+
+input, textarea {
+	outline: none;
 }
 
 .wrapper {
@@ -71,7 +79,7 @@ a {
 	text-transform: uppercase;
 	transition: 0.5s;
 		&:hover {
-			filter: brightness(60%); ;
+			filter: brightness(60%); 
 		} 
 }
 

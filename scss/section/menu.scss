@@ -45,6 +45,12 @@
 	background-color: rgba(#2f3234, .93);
 }
 
+.menu__accordion-item--active {
+	.menu__accordion-content {
+		width: auto;
+	}
+}
+
 .menu__accordion-trigger {
 	align-self: flex-end; 
 	width: rem(80px);
@@ -84,10 +90,6 @@
 	width: 0;
 	overflow: hidden;
 }
-
-/* .menu__accordion-content--active {
-	width: auto;
-} */
 
 .menu__accordion-content__text {
 	padding: rem(20px);

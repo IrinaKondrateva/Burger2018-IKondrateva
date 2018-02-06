@@ -1,0 +1,36 @@
+.kkal {
+	width: rem(60px);
+	position: absolute;
+	bottom: 0;
+	left: rem(10px);
+	z-index: 100;
+	text-align: center;
+	font-family: "Gagalin", "Arial";
+	font-size: rem(14px);
+	line-height: 1.714;
+
+	@include tablets {
+		left: 73.24%;
+		bottom: initial;
+	}
+
+	@include phones {
+		right: 0;
+		left: initial;
+	}
+}
+
+.icon-kkal {
+	font-size: rem(60px);
+	display: block;
+}
+
+.kkal__number {
+	position: absolute;
+	z-index: 1000;
+	top: rem(32px);
+	left: 0;
+	right: 0;
+	font-size: rem(20px);
+	line-height: 1.2;
+}
