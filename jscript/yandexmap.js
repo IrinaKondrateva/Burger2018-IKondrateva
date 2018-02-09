@@ -74,5 +74,5 @@ ymaps.ready(function () {
         .add(myPlacemark2)
         .add(myPlacemark3);
 
-    myMap.behaviors.disable('scrollzoom');
+    myMap.behaviors.disable('scrollZoom');
 });

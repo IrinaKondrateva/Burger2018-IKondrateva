@@ -1,0 +1,38 @@
+.opnions__overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10000;
+	background-color: rgba($grey, 0.92);
+};
+
+.opnions__overlay-container {
+	position: relative;
+	width: rem(460px);
+	height: rem(254px);
+	border-radius: rem(5px);
+	background-color: $white;
+	padding:rem(21px) rem(20px);
+}
+
+.opnions__overlay__close {
+	display: block;
+	position: absolute;
+	top: rem(21px);
+	right: rem(20px);
+}
+
+.opinions__title--overlay {
+	color: rgb(47, 50, 52);
+	line-height: 2.008;
+}
+
+.opinions__text--overlay {
+	color: $black;
+	max-height: rem(210px);
+}
