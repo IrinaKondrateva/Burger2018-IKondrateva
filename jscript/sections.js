@@ -118,7 +118,7 @@ function createOpinOlay(title, text) {
 	});
 
 	var opinOverlayCloseImg = newElement("img", "opnions__overlay__close-img");
-	opinOverlayCloseImg.src = "../images/content/closered.svg";
+	opinOverlayCloseImg.src = "images/content/closered.svg";
 
 	const opinOverlayContent = newElement("div", "opnions__overlay__content");
 
