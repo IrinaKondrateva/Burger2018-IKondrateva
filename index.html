@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru-RU">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<!-- <script src="jscript/jquery-3.3.1.min.js"></script> -->
+	<script src="jscript/jquery-3.3.1.min.js"></script>
 	<title>Burgers</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 	<div class="wrapper">
-		<div class="maincontent">
+		<div class="maincontent" id="fullpage">
 	    	<section class="section burger">
 	    		<div class="container burger__container">
 					<header class="header">
@@ -26,27 +26,27 @@
 							<nav class="header__nav">
 								<ul class="nav__list">
 									<li class="nav__item">
-										<a href="#" class="nav__link">о нас</a>
+										<a href="#aboutus" class="nav__link">о нас</a>
 									</li>
 									<li class="nav__item">
-										<a href="#" class="nav__link">бургеры</a>
+										<a href="#burgers" class="nav__link">бургеры</a>
 									</li>
 									<li class="nav__item">
-										<a href="#" class="nav__link">команда</a>
+										<a href="#team" class="nav__link">команда</a>
 									</li>
 									<li class="nav__item">
-										<a href="#" class="nav__link">меню</a>
+										<a href="#menu" class="nav__link">меню</a>
 									</li>
 									<li class="nav__item">
-										<a href="#" class="nav__link">отзывы</a>
+										<a href="#opinions" class="nav__link">отзывы</a>
 									</li>
 									<li class="nav__item">
-										<a href="#" class="nav__link">контакты</a>
+										<a href="#contacts" class="nav__link">контакты</a>
 									</li>
 								</ul>
 							</nav>
 							<div class="header__btn">
-								<a href="#" class="button">заказать</a>
+								<a href="#burgers" class="button">заказать</a>
 								<a href="#" class="hamburger-menu">
 									<div class="hamburger-menu__bars"></div>
 								</a>
@@ -74,27 +74,27 @@
 					</a>
 					<ul class="nav-mobile__list">
 						<li class="nav-mobile__item">
-							<a href="#" class="nav-mobile__link">о нас</a>
+							<a href="#aboutus" class="nav-mobile__link">о нас</a>
 						</li>
 						<li class="nav-mobile__item">
-							<a href="#" class="nav-mobile__link">бургеры</a>
+							<a href="#burgers" class="nav-mobile__link">бургеры</a>
 						</li>
 						<li class="nav-mobile__item">
-							<a href="#" class="nav-mobile__link">команда</a>
+							<a href="#team" class="nav-mobile__link">команда</a>
 						</li>
 						<li class="nav-mobile__item">
-							<a href="#" class="nav-mobile__link">меню</a>
+							<a href="#menu" class="nav-mobile__link">меню</a>
 						</li>
 						<li class="nav-mobile__item">
-							<a href="#" class="nav-mobile__link">отзывы</a>
+							<a href="#opinions" class="nav-mobile__link">отзывы</a>
 						</li>
 						<li class="nav-mobile__item">
-							<a href="#" class="nav-mobile__link">контакты</a>
+							<a href="#contacts" class="nav-mobile__link">контакты</a>
 						</li>
 					</ul>
 				</nav>
 			</section>
-			<section class="section best">
+			<section class="section best" id="aboutus">
 				<div class="container best__container">
 					<h1 class="section__title section__title--best">мы лучшие</h1>
 					<ul class="best__list">
@@ -140,7 +140,7 @@
 					</ul>
 				</div>
 			</section>
-			<section class="section slider">
+			<section class="section slider" id="burgers">
 				<div class="container slider__container">
 					<a href="#" class="slider__scroll slider__scroll_left">
 						<span class="icon-arrow-scroll"></span>
@@ -169,7 +169,7 @@
 											<span class="slider-span">500</span>рублей
 										</div>
 										<div class="slider__order-btn">
-											<a href="#" class="button">заказать</a>
+											<a href="#order" class="button">заказать</a>
 										</div>
 									</div>
 								</div>
@@ -230,7 +230,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section team">
+			<section class="section team" id="team">
 				<div class="container team__container">
 					<div class="team__info">
 						<h1 class="section__title section__title--team">команда</h1>
@@ -319,7 +319,7 @@
 					</div>					
 				</div>
 			</section>
-			<section class="section menu">
+			<section class="section menu" id="menu">
 				<div class="container menu__container">
 					<h1 class="section__title section__title--menu">
 						меню
@@ -372,7 +372,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section opinions">
+			<section class="section opinions" id="opinions">
 				<ul class="opinios__list">
 					<li class="opinions__item">
 						<div class="opinions__photo" style="background-image: url(images/bg/opinion-phot1.png); background-position: center center;">
@@ -479,7 +479,7 @@
 					</li>
 				</ul>
 			</section>
-			<section class="section order">
+			<section class="section order" id="order">
 				<div class="container order__container">
 					<h1 class="section__title section__title--order">
 						закажите доcтавку
@@ -558,7 +558,7 @@
 					</form>
 				</div>
 			</section>
-			<section class="section contacts">
+			<section class="section contacts" id="contacts">
 				<div class="container contacts__container">
 					<div class="contacts__map" id="map">	
 					</div>
@@ -586,30 +586,42 @@
 					<a href="#" class="sidebar__link"></a>
 				</li>
 				<li class="sidebar__item">
-					<a href="#" class="sidebar__link"></a>
+					<a href="#aboutus" class="sidebar__link"></a>
 				</li>
 				<li class="sidebar__item">
-					<a href="#" class="sidebar__link"></a>
+					<a href="#burgers" class="sidebar__link"></a>
 				</li>
 				<li class="sidebar__item">
-					<a href="#" class="sidebar__link"></a>
+					<a href="#team" class="sidebar__link"></a>
 				</li>
 				<li class="sidebar__item">
-					<a href="#" class="sidebar__link"></a>
+					<a href="#menu" class="sidebar__link"></a>
 				</li>
 				<li class="sidebar__item">
-					<a href="#" class="sidebar__link"></a>
+					<a href="#opinions" class="sidebar__link"></a>
 				</li>
 				<li class="sidebar__item">
-					<a href="#" class="sidebar__link"></a>
+					<a href="#order" class="sidebar__link"></a>
 				</li>
 				<li class="sidebar__item">
-					<a href="#" class="sidebar__link"></a>
+					<a href="#contacts" class="sidebar__link"></a>
 				</li>
 			</ul>	
 		</aside>
 	</div>
+	<script type="template" id="overlayTemplate">
+		<div class="overlay-container">
+			<a href="#" class="overlay__close">
+				<img src="images/content/closered.svg" alt="закрыть" class="overlay__close-img">
+			</a>
+			<div class="overlay__content">
+				<div class="overlay__title"></div>
+				<div class="overlay__text"></div>
+			</div>
+		</div>	
+	</script>
 	<script src="jscript/sections.js"></script>
-	<script src="jscript/yandexmap.js"></script>   				
+	<script src="jscript/yandexmap.js"></script>
+	<script src="jscript/onePageScroll.js"></script>   				
 </body>
 </html>

@@ -1,8 +1,16 @@
+// One Page Scroll
+/*$(document).ready(function() {
+	$('#fullpage').fullpage({
+		scrollingSpeed: 800
+	});
+});*/
+
 // hamgurger menu
 
-var navMobileOpen = document.querySelector(".hamburger-menu");
-var navMobile = document.querySelector(".nav-mobile");
-var navMobileClose = document.querySelector(".nav-mobile__close");
+const navMobileOpen = document.querySelector(".hamburger-menu");
+const navMobile = document.querySelector(".nav-mobile");
+const navMobileClose = document.querySelector(".nav-mobile__close");
+const navMobileLink = document.querySelectorAll(".nav-mobile__link");
 
 navMobileOpen.addEventListener("click", function(e) {
 	e.preventDefault();
@@ -13,6 +21,12 @@ navMobileClose.addEventListener("click", function(e) {
 	e.preventDefault();
 	navMobile.classList.remove("nav-mobile_active");
 });
+
+for(let i = 0; i < navMobileLink.length; i++) {
+	navMobileLink[i].addEventListener("click", function(e) {
+		navMobile.classList.remove("nav-mobile_active");
+	});
+};
 
 // slider
 const arrowLeft = document.querySelector(".slider__scroll_left");
@@ -30,7 +44,6 @@ var sliderItemsTitle = document.querySelectorAll(".section__title--slider");
 var sliderItemsCost = document.querySelectorAll(".slider-span");
 var sliderItemsPic = document.querySelectorAll(".slider__pic");
 
-var itemNumber;
 changeSliderItem(1, "url('images/content/Chiken_burger.png')", "Chicken burger", "120");
 changeSliderItem(2, "url('images/content/burger_sandwich.png')", "Burger-sandwich", "910");
 changeSliderItem(3, "url('images/content/Shrimp_Burger.png')", "Spicy Shrimp Burger", "427");
@@ -57,6 +70,7 @@ arrowLeft.addEventListener("click", function(e) {
 	sliderList.style.right = currentRight + "%"; 
 });
 
+var itemNumber;
 function changeSliderItem(itemNumber, pic, title, cost) {
 		sliderItemsPic[itemNumber].style.backgroundImage = pic;
 		sliderItemsTitle[itemNumber].textContent = title;
@@ -103,56 +117,39 @@ for (let i = 0; i < menuAccoTrigger.length; i++) {
 
 // overlay opinions
 
+var overlayTemplate = document.querySelector("#overlayTemplate");
 var opinionItem = document.querySelectorAll(".opinions__item");
 const opinionTitle = document.querySelectorAll(".opinions__title");
 const opinionText = document.querySelectorAll(".opinions__text");
 const openOpinionOLay = document.querySelectorAll(".openOpinOverlay");
 
 function createOpinOlay(title, text) {
-	const opinOverlay = newElement("div", "opnions__overlay");
-	const opinOverlayContainer = newElement("div", "opnions__overlay-container");
-	const opinOverlayClose = newElement("a", "opnions__overlay__close");
+	const opinionOverlay = newElement("div", "opnions__overlay");
+	opinionOverlay.innerHTML = overlayTemplate.innerHTML;
+
+	const opinOverlayClose = opinionOverlay.querySelector(".overlay__close");
 	opinOverlayClose.addEventListener("click", function(e) {
 		e.preventDefault();
-		opinOverlay.remove();
+		opinionOverlay.remove();
 	});
 
-	var opinOverlayCloseImg = newElement("img", "opnions__overlay__close-img");
-	opinOverlayCloseImg.src = "images/content/closered.svg";
-
-	const opinOverlayContent = newElement("div", "opnions__overlay__content");
-
-	var opinOverlayTitle = newElement("div", "opinions__title");
-	opinOverlayTitle.classList.add("opinions__title--overlay");
+	const opinOverlayTitle = opinionOverlay.querySelector(".overlay__title");
+	opinOverlayTitle.classList.add("overlay__title--opinions");
 	opinOverlayTitle.textContent = title;
 
-	var opinOverlayText = newElement("div", "opinions__text");
-	opinOverlayText.classList.add("opinions__text--overlay");
+	const opinOverlayText = opinionOverlay.querySelector(".overlay__text");
+	opinOverlayText.classList.add("overlay__text--opinions");
 	opinOverlayText.textContent = text + text;
-
-	opinOverlay.appendChild(opinOverlayContainer);
-	opinOverlayContainer.appendChild(opinOverlayClose);
-	opinOverlayClose.appendChild(opinOverlayCloseImg);
-	opinOverlayContainer.appendChild(opinOverlayContent);
-	opinOverlayContent.appendChild(opinOverlayTitle);
-	opinOverlayContent.appendChild(opinOverlayText);
 	
-	return opinOverlay;
+	return opinionOverlay;
 };
 
 for (let i = 0; i < opinionItem.length; i++) {
 	openOpinionOLay[i].addEventListener("click", function(e) {
 		e.preventDefault();
-		var overlay = createOpinOlay(opinionTitle[i].textContent, opinionText[i].textContent);
-		
-		opinionItem[i].appendChild(overlay);
 
-
-		for (let j = 0; j < opinionItem.length; j++) {
-			if ( j !== i && opinionItem[j].lastElementChild.matches(".opnions__overlay") ) {
-				opinionItem[j].lastElementChild.remove();
-			};
-		};
+		var sliderOverlay = createOpinOlay(opinionTitle[i].textContent, opinionText[i].textContent);
+		opinionItem[i].appendChild(sliderOverlay);
 	});
 };
 
