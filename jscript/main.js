@@ -1,9 +1,12 @@
 // One Page Scroll
-/*$(document).ready(function() {
+$(document).ready(function() {
+	
 	$('#fullpage').fullpage({
-		scrollingSpeed: 800
+		scrollingSpeed: 800,
+		menu: "#fixed_menu"
 	});
-});*/
+	
+});
 
 // hamgurger menu
 

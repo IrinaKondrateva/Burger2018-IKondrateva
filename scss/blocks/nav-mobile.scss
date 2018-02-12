@@ -5,9 +5,8 @@
 	top: -100%;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(47, 50, 52, 0.9);
+	background-color: $grey;
 	border: rem(2px) solid transparent;
-	border-radius: rem(10px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,12 +16,28 @@
 	top: 0;
 }
 
+.nav-mobile__logo {
+	position: absolute;
+	top: rem(10px);
+	left: rem(20px);
+}
+
+.nav-mobile__close {
+	position: absolute;
+	top: rem(30px);
+	right: rem(30px);
+
+	&:hover {
+		filter: brightness(60%);
+	}
+}
+
 .nav-mobile__item {
 	&:after {
 		display: block;
-		margin: 0 auto;
+		margin: rem(18px) auto;
 		content: '';
-		@include circle(rem(4px), $white);
+		@include circle(rem(6px), $white);
 	}
 	
 	&:last-child:after {
@@ -33,20 +48,11 @@
 .nav-mobile__link {
 	display: block;
 	font-family: "Ubuntu", "Arial";
-	font-size: rem(18px);
-	line-height: 2.308;
+	font-size: rem(23px);
+	line-height: 1.667;
 	font-weight: medium;
 	color: $white;
 	text-transform: uppercase;
 	text-align: center;
 }
 
-.nav-mobile__close {
-	position: absolute;
-	top: 2%;
-	right: 2%;
-
-	&:hover {
-		filter: brightness(60%);
-	}
-}
