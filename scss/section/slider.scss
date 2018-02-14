@@ -8,7 +8,6 @@
 .slider__container {
 	position: relative;
 	align-items: center;
-	// margin: 0; удаление после добавдения OnePageScroll
 }
 
 .slider__scroll {
@@ -89,13 +88,13 @@
 
 .slider__pic {
 	min-height: rem(330px);
-	min-width: rem(460px);
 	width: 50%;
 	background-size: contain;
 	background-position: center center;
 	background-repeat: no-repeat;
 
 	@include tablets {
+		min-width: rem(460px);
 		margin-top: rem(76px);
 	}
 
@@ -109,7 +108,7 @@
 .slider__info {
 	height: 100%;
 	width: 50%; 
-	margin-left: rem(20px);
+	margin-left: rem(24px);
 
 	@include tablets {
 		margin-left: rem(0px);
@@ -128,30 +127,26 @@
 .section__title--slider {
 	color: $white;
 	line-height: 0.9;
-	padding-bottom: rem(42px);
-	padding-top: rem(50px);
+	padding-bottom: rem(45px);
+	padding-top: rem(52px);
 
 	@include tablets {
 		padding-bottom: rem(43px);
-		padding-top: rem(20px);
-		width: 90%;
+		padding-top: rem(22px);
 	}
 
 	@include phones {
+		width: 80%;
 		padding-bottom: rem(23px);
 		padding-top: rem(21px);
 		line-height: 1.053;
 	}
 }
 
-.slider__text {
-	word-spacing: rem(2px);
-}
-
 .slider__order {
 	display: flex;
 	align-items: baseline;
-	margin-top: rem(4px);
+	margin-top: rem(0px);
 
 	&-cost {
 		color: $red;
@@ -165,6 +160,7 @@
 
 		.slider-span {
 			font-size: rem(72px);
+			margin-left: rem(-3px);
 
 			@include phones {
 				font-size: rem(50px);
@@ -185,10 +181,10 @@
 .slider__order-btn {
 	align-self: center;
 	margin-left: rem(30px);
-	margin-top: rem(30px);
+	margin-top: rem(28px);
 
 	@include tablets {
-		margin-top: rem(34px);
+		margin-top: rem(40px);
 	}
 
 	@include phones {

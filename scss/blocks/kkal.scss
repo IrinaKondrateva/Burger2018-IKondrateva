@@ -1,7 +1,7 @@
 .kkal {
 	width: rem(60px);
 	position: absolute;
-	bottom: 0;
+	bottom: rem(-5px);;
 	left: rem(10px);
 	z-index: 100;
 	text-align: center;
@@ -10,7 +10,7 @@
 	line-height: 1.714;
 
 	@include tablets {
-		left: 73.24%;
+		left: 74%;
 		bottom: initial;
 	}
 
@@ -28,7 +28,7 @@
 .kkal__number {
 	position: absolute;
 	z-index: 1000;
-	top: rem(32px);
+	top: rem(28px);
 	left: 0;
 	right: 0;
 	font-size: rem(20px);

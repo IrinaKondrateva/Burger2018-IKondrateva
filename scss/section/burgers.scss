@@ -15,8 +15,8 @@
 
 .header__left {
 	margin-right: auto;
-	padding-left: rem(17px);
-	padding-top: rem(3px);
+	padding-left: rem(7px);
+	padding-top: rem(11px);
 }
 
 .header__right {
@@ -25,7 +25,7 @@
 }
 
 .header__nav {
-	padding-right: rem(16px);
+	padding-right: rem(18px);
 
 	@include tablets {
 		display: none;
@@ -73,6 +73,23 @@
 .header__btn {
 	display: flex;
 	align-items: center;
+	padding-right: rem(12px);
+	margin-top: rem(2px);
+}
+
+.button--burger {
+	@include tablets {
+		padding: rem(3px) rem(18px);
+	}
+}
+
+.burger__content {
+	margin-bottom: rem(80px);
+
+	@include phones {
+		margin-bottom: 0;
+		min-height: rem(610px);
+	}
 }
 
 .burger__pic {
@@ -83,7 +100,12 @@
 .burger__img {
 	display: block;
 	width: 100%;
-	max-width: rem(460px); 
+	max-width: rem(450px);
+	margin-left: rem(25px);  
+
+	@include tablets {
+		margin-left: 0;
+	}
 
 	@include phones {
 		max-width: rem(360px);
@@ -92,14 +114,17 @@
 
 .burger__info {
 	flex: 1 1 50%;
-	margin-top: rem(75px);
-	margin-left: rem(-15px);
+	margin-top: rem(70px);
+	margin-left: rem(20px);
 
 	@include tablets {
-		margin-top: 0;
-		padding-top: rem(28px);
+		margin-top: rem(25px);
+		margin-left: 0;
 		text-align: center;
-		margin-left: rem(0px);
+	}
+
+	@include phones {
+		margin-top: rem(38px);
 	}
 }
 
@@ -115,7 +140,7 @@
 
 	&--burger {
 		@include phones {
-		font-size: rem(63px);
+			font-size: rem(63px);
 		}
 	}
 }
@@ -130,13 +155,27 @@
 	}
 
 	&-burger {
-		margin-top: rem(15px);
+		padding-top: rem(15px);
+
+		@include tablets {
+			padding-top: rem(25px);
+			line-height: 0.95;
+		}
+
+		@include phones {
+			padding-top: rem(4.5px);
+			line-height: 1.15;
+		}
 	}
 }
 
 .scroll {
 	text-align: center;
-	padding-bottom: rem(50px);
+	padding-bottom: rem(55px);
+
+	@include phones {
+		padding-bottom: rem(25px);
+	}
 }
 
 

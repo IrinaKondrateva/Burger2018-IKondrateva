@@ -161,3 +161,34 @@ function newElement() {
 	element.classList.add(arguments[1]);
 	return element;
 };
+
+//send form by JS
+/*const submitButton = document.querySelector(".button__red-inform");
+
+submitButton.addEventListener("click", function(e) {
+	e.preventDefault();
+
+	var formData = new FormData(document.forms.form);
+	console.log(formData);
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', "/forms.php", true);
+
+	xhr.onload = function() {
+		console.log(xhr.response);
+	};
+	xhr.send(formData);
+});
+
+$(document).ready(function () {
+    $(".form").on('submit', function (e) {
+        e.preventDefault();
+        $.ajax('send.php', {
+          type: "POST",
+          data: $(this).serialize(),
+          success: function (data) {
+            console.log(data);
+          };
+        });
+      });
+  });*/

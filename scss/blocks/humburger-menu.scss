@@ -2,12 +2,16 @@
 	position: relative;
 	height: rem(22px);
 	align-items: center;
-	margin-left: rem(30px);
   	display: none;
 
-  @include tablets() {
-    display: flex;
-  }
+	@include tablets() {
+		display: flex;
+	    padding: 0 rem(3px) 0 rem(28px);
+	}
+
+	@include phones() {
+	    padding: 0 0 0 rem(26px);
+	}
 }
 
 .hamburger-menu__bars {

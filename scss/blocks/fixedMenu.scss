@@ -1,11 +1,11 @@
 .nav-fixed {
 	position: fixed;
-    top: rem(94px);
-    left: 94%;
+    top: rem(89px);
+    right: rem(48px);
 }
 
 .nav-fixed__list {
-    height: rem(162px);
+    height: rem(167px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,8 +13,8 @@
 }
 
 .nav-fixed__link {
-    width: rem(20px);
-    height: rem(20px);
+    width: rem(18px);
+    height: rem(18px);
     display: block;
     border: rem(1px) solid transparent;
     border-radius: 50%;
