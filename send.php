@@ -1,27 +1,59 @@
 <?php
   
-function sendMail() {
-	$poststring = '';
-	foreach ($_POST as $key => $value) {
-		if ( isset($value) && $value !="") {
-	    	$poststring += "$key : $value \n";
-	    } else {
-	    	echo "не введены данные:".$key;
-	    	return "не введены данные:";
-	    };
-	};
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$street = $_POST['street'];
+$house = $_POST['house'];
+$building = $_POST['building'];
+$apartment = $_POST['apartment'];
+$floor = $_POST['floor'];
+$comment = $_POST['comment'];
+$payment = $_POST['payment'];
 
-	$to = "anirikon@mail.ru";
-	$subject = "Новый пользователь";
-	$massage = $poststring;
-	$headers  = "Content-type: text/html; charset=utf-8 \r\n";
-	$headers .= "From: Отправитель <irakonrdratyeva@gmail.com>\r\n";
+$callback = $_POST['callback'];
+$callback = isset($callback) ? 'Нет' : 'Да';
 
-	if ( mail($to, $subject, $message, $headers) ) { 
-		return true; 
-	} else { 
-		return false;
-	};
+$to = 'irakonrdratyeva@gmail.com';
+$subject = 'Новый заказ';
+
+$massage = '
+<html>
+<head>
+	<title>Новый заказ</title>
+</head>
+<body>
+	<h2>Данные заказа</h2>
+	<ul>
+		<li>Имя:  ' .$name. '</li>
+		<li>Телефон:  ' .$phone. '</li>
+		<li>Улица:  ' .$street. '</li>
+		<li>Дом:  ' .$house. '</li>
+		<li>Корпус:  ' .$building. '</li>
+		<li>Квартира:  ' .$apartment. '</li>
+		<li>Этаж:  ' .$floor. '</li>
+		<li>Способ оплаты:  ' .$payment. '</li>
+		<li>Перезвонить?  ' .$callback. '</li>
+		<li>Комментарии к заказу:  ' .$comment. '</li>
+	</ul>
+</body>
+</html>';
+
+$headers = "From: Администратор сайта <irakonrdratyeva@gmail.com>\r\n".
+                "MIME-Version: 1.0" . "\r\n" .
+                "Content-type: text/html; charset=UTF-8" . "\r\n";
+
+$mail = mail($to, $subject, $massage, $headers);
+
+$data = [];
+
+if ($mail) {
+    $data['status'] = "OK";
+    $data['mes'] = "Сообщение отправлено";
+} else {
+    $data['status'] = "NO";
+    $data['mes'] = "На сервере произошла ошибка";
 }
+
+echo json_encode($data);
 
 ?>

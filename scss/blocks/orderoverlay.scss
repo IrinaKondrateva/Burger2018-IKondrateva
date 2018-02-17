@@ -1,0 +1,40 @@
+.order__overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 10000;
+	background-color: rgba($grey, 0.92);
+}
+
+.overlay-container--order {
+	position: relative;
+	top: 30.5%;
+	width: rem(196px);
+	height: rem(106px);
+	border-radius: rem(5px);
+	background-color: $white;
+	box-shadow: 0 0 rem(40px) 0 rgba(0, 0, 1, 0.5);
+	padding: rem(15px);
+	text-align: center;
+}
+
+.overlay__text--order {
+	font-weight: light;
+	line-height: 1.75;
+	color: $black;
+	max-height: rem(210px);
+}
+
+.button-msg {
+	border: none;
+	width: rem(97px);
+	height: rem(35px);
+	padding: 0;
+	border-radius: rem(5px);
+	margin-top: rem(12px);
+}

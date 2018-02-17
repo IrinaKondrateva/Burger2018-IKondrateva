@@ -12,23 +12,24 @@
 .section__title--menu {
 	position: relative;
 	z-index: 100;
-	padding-top: rem(95px);
-	padding-left: rem(95px);
+	padding-top: rem(96px);
+	padding-left: rem(73px);
 	color: $white;
 
 	@include tablets {
-		padding-left: rem(0px);
+		padding-left: rem(10px);
 	}
 
 	@include phones {
-		padding-top: rem(45px);
-		padding-left: rem(35px);
+		padding-top: rem(50px);
+		padding-left: rem(50px);
 	}
 }
 
 .menu__info {
 	width: 70%;
 	position: absolute;
+	z-index: 500;
 	right: 0;
 	top: 0;
 	bottom: 0;
@@ -46,8 +47,22 @@
 }
 
 .menu__accordion-item--active {
+
 	.menu__accordion-content {
-		width: auto;
+		width: rem(540px);
+		transition: width 0.5s;
+
+		@include tablets {
+			width: calc(100vw - 240px);
+		}
+
+		@include phones {
+			width: calc(100vw - 80px);
+		}
+	}
+
+	.menu__accordion-trigger__text {
+		color: $orange;
 	}
 }
 
@@ -84,6 +99,10 @@
 	text-indent: rem(40px);
 	line-height: 2;
 	color: $white;
+
+	@include phones {
+		padding-left: rem(20px);
+	}
 }
 
 .menu__accordion-content {
@@ -92,5 +111,7 @@
 }
 
 .menu__accordion-content__text {
-	padding: rem(20px);
+	padding: rem(56px) rem(35px);
+	letter-spacing: rem(-0.2px);
+	line-height: 1.75;
 }

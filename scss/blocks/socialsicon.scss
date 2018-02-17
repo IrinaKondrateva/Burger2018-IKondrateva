@@ -1,0 +1,21 @@
+.socialswrap {
+	margin-bottom: rem(5px);
+}
+
+.icon-socials {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: rem(16px);
+	fill: $white;
+	opacity: 0.3;
+	width: rem(21px);
+	height: rem(21px);
+	
+	&:hover {
+		opacity: 1;
+	}
+	
+	&:last-child {
+		margin-right: rem(4px);
+	}
+}

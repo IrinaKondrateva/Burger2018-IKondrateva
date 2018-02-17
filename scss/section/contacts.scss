@@ -55,14 +55,22 @@
 	}
 }
 
+.footer__info-address {
+	letter-spacing: rem(-0.1px);
+}
+
 .footer__info-tel {
 	color: #bc4222;
 	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
 
-	&:before {
-		content: url("../images/content/phone.svg");
-		width: rem(14px);
-	}
+.icon-phone {
+	margin-right: rem(10px);
+	fill: #bc4222;
+	width: rem(12px);
+	height: rem(12px);
 }
 
 .footer__socials {

@@ -1,11 +1,50 @@
-// One Page Scroll
+// One Page Scroll and sending form
+
 $(document).ready(function() {
 	
 	$('#fullpage').fullpage({
 		scrollingSpeed: 800,
 		menu: "#fixed_menu"
 	});
-	
+
+	$(".order__container").append("<div class='order__overlay'></div>");
+	var orderOverlay = $(".order__overlay").html( $("#serverMsgOlayTempl").html() ).css( "display", "none" );;
+	orderOverlay.find(".overlay-container").addClass("overlay-container--order");
+	orderOverlay.find(".overlay__content").addClass("overlay__content--order");
+	orderOverlay.find(".overlay__text").addClass("overlay__text--order");
+
+	orderOverlay.find(".button-msg").on("click", function() {
+		orderOverlay.css( "display", "none" );
+	});
+
+	$("#order_form").on("submit", submitForm);
+    
+	function submitForm(event) {
+        event.preventDefault();
+        
+        var form = $(event.target);
+        
+        ajaxForm(form).done(function(msg) {
+	    	$(".overlay__text--order").text(msg.mes);
+	    	orderOverlay.css( "display", "flex" );
+        }).fail(function(jqXHR, textStatus) {
+        	$(".overlay__text--order").text("Запрос не удался: " + textStatus);
+	    	orderOverlay.css( "display", "flex" );
+        });
+	};
+
+	var ajaxForm = function(form) {
+		var data = form.serialize(),
+    		url = form.attr("action"),
+    		method = form.attr("method");
+
+    	return $.ajax({
+	        url: url,
+	        type: method,
+	        data: data,
+	        dataType: 'JSON'   
+        })
+	};  
 });
 
 // hamgurger menu
@@ -62,14 +101,23 @@ arrowRight.addEventListener("click", function(e) {
 
 	currentRight < maxRight ? currentRight += step : currentRight = minRight;
 	
-	sliderList.style.right = currentRight + "%"; 
+	sliderList.style.transition = "right 0.5s ease";
+	if (currentRight == minRight) {
+		sliderList.style.transition = "right 0s ease 0.2s";
+	};
+	
+	sliderList.style.right = currentRight + "%";
 });
 
 arrowLeft.addEventListener("click", function(e) {
 	e.preventDefault();
 
 	currentRight > minRight ? currentRight -= step : currentRight = maxRight;
-	
+	sliderList.style.transition = "right 0.5s ease";
+	if (currentRight == maxRight) {
+		sliderList.style.transition = "right 0s ease 0.2s";
+	};
+
 	sliderList.style.right = currentRight + "%"; 
 });
 
@@ -100,27 +148,51 @@ for (let i = 0; i < teamAccoTrigger.length; i++) {
 };
 
 // accordion menu
-
 var menuAccoTrigger = document.querySelectorAll(".menu__accordion-trigger__text");
 var menuAccoItem = document.querySelectorAll(".menu__accordion-item");
 
+const menuAccoClose = document.querySelector(".overlay__close");
+
+var menuAcco = document.querySelector(".menu__accordion");
+let menuAccoClone = menuAcco.cloneNode(true);
+
 for (let i = 0; i < menuAccoTrigger.length; i++) {
+	menuAccoClone.children[i].removeChild(menuAccoClone.children[i].children[1]);
+
 	menuAccoTrigger[i].addEventListener("click", function(e) {
 		e.preventDefault();
 
 		for (var j = 0; j < menuAccoItem.length; j++) {
 			if (j !== i) {
 				menuAccoItem[j].classList.remove("menu__accordion-item--active");
+				
+				//menu for phones
+				if ( parseFloat(getComputedStyle(document.body).width) < 480 ) {
+					menuAccoItem[j].style.position = "absolute";
+					menuAccoItem[j].style.zIndex = "-400";
+				};
+
 			};
 		};
 
 		this.closest(".menu__accordion-item").classList.toggle("menu__accordion-item--active");
+
+		if ( parseFloat(getComputedStyle(document.body).width) < 480 ) {
+			/*menuAccoItem[i].children[1].children[1].appendChild(menuAccoClose);*/
+			menuAccoClose.addEventListener("click", function(e) {
+				e.preventDefault();
+				menuAccoItem[i].classList.remove("menu__accordion-item--active");
+			});
+		};
 	});
 };
 
+menuAccoClone.classList.add("menu__accordion-clone");
+menuAcco.appendChild(menuAccoClone);
+
 // overlay opinions
 
-var overlayTemplate = document.querySelector("#overlayTemplate");
+var overlayTemplate = document.querySelector("#opinionOlayTemplate");
 var opinionItem = document.querySelectorAll(".opinions__item");
 const opinionTitle = document.querySelectorAll(".opinions__title");
 const opinionText = document.querySelectorAll(".opinions__text");
@@ -143,7 +215,7 @@ function createOpinOlay(title, text) {
 	const opinOverlayText = opinionOverlay.querySelector(".overlay__text");
 	opinOverlayText.classList.add("overlay__text--opinions");
 	opinOverlayText.textContent = text + text;
-	
+
 	return opinionOverlay;
 };
 
@@ -162,33 +234,5 @@ function newElement() {
 	return element;
 };
 
-//send form by JS
-/*const submitButton = document.querySelector(".button__red-inform");
 
-submitButton.addEventListener("click", function(e) {
-	e.preventDefault();
 
-	var formData = new FormData(document.forms.form);
-	console.log(formData);
-
-	var xhr = new XMLHttpRequest();
-	xhr.open('POST', "/forms.php", true);
-
-	xhr.onload = function() {
-		console.log(xhr.response);
-	};
-	xhr.send(formData);
-});
-
-$(document).ready(function () {
-    $(".form").on('submit', function (e) {
-        e.preventDefault();
-        $.ajax('send.php', {
-          type: "POST",
-          data: $(this).serialize(),
-          success: function (data) {
-            console.log(data);
-          };
-        });
-      });
-  });*/

@@ -7,6 +7,10 @@
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<title>Burgers</title>
 	<link rel="stylesheet" href="css/main.css">
+	<script src="./js/svg4everybody.js"></script>
+	<!-- <script>
+	    svg4everybody();
+	</script> -->
 </head>
 <body>
 	<div class="wrapper">
@@ -301,22 +305,22 @@
 					<div class="menu__info">
 						<ul class="menu__accordion">
 							<li class="menu__accordion-item">
-								<div href="#" class="menu__accordion-trigger">
-									<a href="#" class="menu__accordion-trigger__text">
+								<div class="menu__accordion-trigger">
+									<a href="" class="menu__accordion-trigger__text">
 										для мясоедов
 									</a>	
 								</div>
 								<div class="menu__accordion-content">
 									<div class="menu__accordion-content__text">
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga necessitatibus soluta distinctio, quam neque laudantium incidunt cumque iste tempore numquam. Inventore ipsa illum voluptate minus. Voluptates, hic neque iusto voluptatem praesentium modi! Quia ex ipsa aspernatur at molestiae distinctio dolorum laborum soluta debitis libero aut tempora incidunt ea asperiores explicabo beatae
+											Речевой акт редуцирует диалектический характер. Развивая эту тему, ipsum dolor sit amet, consectetur adipisicing elit. Fuga necessitatibus soluta distinctio, quam neque laudantium incidunt cumque iste tempore numquam. Inventore ipsa illum voluptate minus. Voluptates, hic neque iusto voluptatem praesentium modi! Quia ex ipsa aspernatur at molestiae distinctio dolorum laborum soluta debitis libero aut tempora incidunt ea asperiores explicabo beatae
 										</p>
 									</div>
 								</div>
 							</li>
 							<li class="menu__accordion-item">
-								<div href="#" class="menu__accordion-trigger menu__accordion-trigger--veg">
-									<a href="#" class="menu__accordion-trigger__text">
+								<div class="menu__accordion-trigger menu__accordion-trigger--veg">
+									<a href="" class="menu__accordion-trigger__text">
 										вегетарианское
 									</a>	
 								</div>
@@ -329,8 +333,8 @@
 								</div>
 							</li>
 							<li class="menu__accordion-item">
-								<div href="#" class="menu__accordion-trigger menu__accordion-trigger--diet">
-									<a href="#" class="menu__accordion-trigger__text">
+								<div class="menu__accordion-trigger menu__accordion-trigger--diet">
+									<a href="" class="menu__accordion-trigger__text">
 										диетическое
 									</a>	
 								</div>
@@ -458,7 +462,7 @@
 					<h1 class="section__title section__title--order">
 						закажите доcтавку
 					</h1>
-					<form class="form">
+					<form action="send.php" method="POST" id="order_form">
 						<div class="order__customer">
 							<div class="order__customer-info">
 								<label class="form__block">
@@ -498,8 +502,7 @@
 						<div class="order__extrainfo">
 							<label class="form__block form__block--comm">
 								<span class="form__block-title">Комментарий</span>
-								<textarea name="comment" placeholder="" maxlength="30" class="form__block-input form__block-input--textarea">
-								</textarea>
+								<textarea name="comment" placeholder="" maxlength="130" class="form__block-input form__block-input--textarea"></textarea>
 							</label>
 							<ul class="order__pay">
 								<li class="order__pay__option">
@@ -519,13 +522,13 @@
 							</ul>
 							<div class="order__callback">
 								<label class="form__select">
-									<input type="checkbox" name="callback"  checked="checked" class="form__select-input form__select-input--check">
+									<input type="checkbox" name="callback" value="1" checked="checked" class="form__select-input form__select-input--check">
 									<span class="form__select-btn--check"></span>
 									<span class="form__select-title">Не перезванивать</span>
 								</label>
 							</div>
 							<div class="order__btn">
-								<input type="submit" name="submit" value="Заказать" class="button button__red-inform">
+								<button type="submit" class="button button__red-inform">Заказать</button>
 								<input type="reset" value="Очистить" class="button button__nobground">
 							</div>
 						</div>
@@ -541,14 +544,30 @@
 					<div class="footer__container">
 						<div class="footer__info">
 							<div class="footer__info-address">
-							Санкт-Петербург, ул.Бабушкина, д. 12/1, 15
+							Санкт-Петербург, ул.Бабушкина, д.12/1, 15
 							</div>
 							<div class="footer__info-tel">
-								+7(812)377-13-77
+								<svg class="icon-phone">
+							    	<use xlink:href="images/sprite.svg#phone"></use>
+							    </svg>
+								<span class="footer__info-tel-text">+7&nbsp(812)&nbsp377-13-77</span>
 							</div>
 						</div>
 						<div class="footer__socials">
-							vk,tw
+							<div class="socialswrap">
+							    <svg class="icon-socials">
+							    	<use xlink:href="images/sprite.svg#vk"></use>
+							    </svg>
+							    <svg class="icon-socials">
+							    	<use xlink:href="images/sprite.svg#fb"></use>
+							    </svg>
+							    <svg class="icon-socials">
+							    	<use xlink:href="images/sprite.svg#inst"></use>
+							    </svg>
+							    <svg class="icon-socials">
+							    	<use xlink:href="images/sprite.svg#twitter"></use>
+							    </svg>
+							</div>
 						</div>
 					</div>
 				</footer>
@@ -611,7 +630,7 @@
 			</li>
 		</ul>	
 	</nav>
-	<script type="template" id="overlayTemplate">
+	<script type="template" id="opinionOlayTemplate">
 		<div class="overlay-container">
 			<a href="#" class="overlay__close">
 				<img src="images/content/closered.svg" alt="закрыть" class="overlay__close-img">
@@ -622,9 +641,17 @@
 			</div>
 		</div>	
 	</script>
-	<script src="jscript/jquery-3.3.1.min.js"></script>
-	<script src="jscript/onePageScroll.js"></script> 	
+	<script type="template" id="serverMsgOlayTempl">
+		<div class="overlay-container">
+			<div class="overlay__content">
+				<div class="overlay__text"></div>
+				<button class="button button-msg">Закрыть</button>
+			</div>
+		</div>	
+	</script>
+	<script src="jscript/jquery-3.3.1.min.js"></script>	
 	<script src="jscript/main.js"></script>
-	<script src="jscript/yandexmap.js"></script>			
+	<script src="jscript/yandexmap.js"></script>
+	<script src="jscript/onePageScroll.js"></script> 			
 </body>
 </html>

@@ -22,7 +22,7 @@
 	}
 }
 
-.form {
+#order_form {
 	display: flex;
 	
 	@include tablets {
@@ -87,11 +87,7 @@ label {
 	width: 100%;
 	border: none;
 	border-radius: rem(5px);
-	padding: rem(10px) rem(23px);
-	
-	&:focus {
-		outline: rem(1px) solid orange;
-	}
+	padding: rem(10px);
 }
 
 .order__pay {

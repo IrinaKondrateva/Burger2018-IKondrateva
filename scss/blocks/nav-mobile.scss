@@ -10,10 +10,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	opacity: 0;
 }
 
 .nav-mobile_active {
 	top: 0;
+	opacity: 1;
+	transition: opacity 0.3s;
 }
 
 .nav-mobile__logo {

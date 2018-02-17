@@ -12,6 +12,17 @@
 		left: 0;
 		top: rem(-5px);
 	}
+
+	&:hover {
+		>.composition__btn {
+			background-color: rgba(277, 80, 40, 1);
+		}
+
+		>.composition__drop {
+			opacity: 1;
+			top: 0;
+		}
+	}
 }
 
 .composition__btn {
@@ -24,15 +35,6 @@
 	justify-content: center;
 	align-items: center;
 	padding-top: rem(12px);
-
-	&:hover {
-		background-color: rgba(277, 80, 40, 1);
-
-		+.composition__drop {
-			opacity: 1;
-			top: 0;
-		}
-	}
 }
 
 .icon-burger {
