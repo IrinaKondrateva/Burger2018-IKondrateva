@@ -98,14 +98,15 @@ label {
 		padding-right: rem(20px);
 
 		@include phones {
-			padding-right: rem(0px);
+			padding-right: rem(12px);
+			padding-left: rem(12px);
 		}
 	} 
 
 	@include phones {
-		margin-top: rem(17px);
+		margin-top: rem(18px);
 		justify-content: center;
-		margin-bottom: rem(30px);
+		margin-bottom: rem(29px);
 	}
 }
 
@@ -125,8 +126,8 @@ label {
 .form__select-btn {
 	display: inline-block;
 	position: relative;
-	width: rem(12px);
-	height: rem(12px);
+	width: rem(14px);
+	height: rem(14px);
 	border-radius: 50%;
 	background-color: $white; 
 
@@ -146,9 +147,10 @@ label {
 .form__select-btn--check {
 	display: inline-block;
 	position: relative;
-	width: rem(10px);
-	height: rem(10px);
-	background-color: $white; 
+	width: rem(15px);
+	height: rem(15px);
+	background-color: $white;
+	margin-top: rem(3px); 
 	
 	&:after {
 		content: "";
@@ -159,10 +161,8 @@ label {
 		background: url("../images/content/check.png") 20% 20% no-repeat;
 		background-size: cover;
 		opacity: 0;
-
-			@include phones {
-				transform: translate(-50%, 0);
-		}
+		left: 50%;
+		transform: translate(-50%, 0);
 	}
 }
 
@@ -185,11 +185,11 @@ label {
 
 	@include phones {
 		text-align: center;
+		margin-bottom: rem(35px);
 	}
 }
 
 .order__btn {
-
 	@include phones {
 		text-align: center;
 	}
@@ -197,6 +197,8 @@ label {
 
 .button__red-inform {
 	border: none;
+	width: rem(97px);
+	height: rem(35px);
 }
 
 .button__nobground {

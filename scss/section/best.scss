@@ -70,7 +70,8 @@
 .best__descr {
 	color: $black;
 	padding: 5% 3.5%;
-	text-align: justify;
+	text-align: center;
+	word-spacing: rem(-3px);
 	max-height: rem(150px);
 	overflow: hidden;
 
@@ -80,6 +81,6 @@
 	}
 }
 
-.best__pic--natural {
-	padding-bottom: rem(6px);
+.best__descr-natural {
+	margin-top: rem(-5px);
 }

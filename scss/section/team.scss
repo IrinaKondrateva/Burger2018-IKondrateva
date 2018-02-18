@@ -40,7 +40,6 @@
 
 	.team__accordion-content {
 			height: rem(100px);
-			transition: height 0.5s;
 
 			@include tablets {
 				height: rem(177px);
@@ -88,6 +87,7 @@
 	height: 0;
 	overflow: hidden;
 	margin-top: rem(10px);
+	transition: height 0.3s;
 
 	@include tablets {
 		flex-direction: column;

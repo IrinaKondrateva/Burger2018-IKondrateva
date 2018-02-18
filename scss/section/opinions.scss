@@ -59,12 +59,14 @@
 	font-size: rem(14px);
 	line-height: 1.5;
 	margin-bottom: rem(17px);
+	letter-spacing: rem(-0.3px);
 
 	@include tablets {
 		line-height: 0.65;
 	}
 
 	@include phones {
+		padding-top: rem(10px);
 		line-height: 1.2;
 		font-size: rem(24px);
 	}
@@ -72,12 +74,13 @@
 
 .opinions__text {
 	font-weight: light;
-	line-height: 1.75;
+	line-height: 1.785;
 	overflow: hidden;
 	max-height: rem(150px);
 
 	@include tablets {
-		max-height: rem(80px);
+		padding-top: rem(2px);
+		max-height: rem(120px);
 	}
 	
 	@include phones {
@@ -87,28 +90,30 @@
 
 .button__gray {
 	position: relative;
-	margin-top: rem(12px);
-	margin-left: rem(1.5px);
+	margin-top: rem(11.5px);
 	width: rem(110px);
+	height: rem(35px);
 	background-color: $grey;
 
 	@include tablets {
 		margin-top: rem(20px);
-		margin-left: rem(0px);
 	}
 
 	@include phones {
 		margin-top: rem(6px);
+		width: rem(126px);
+		height: rem(32px);
 	}
 
 	&:after {
 		content: "читать отзыв";
-		display: inline-block;
-		padding: rem(4px) rem(15px);
-		border-radius: rem(8px);
+		display: block;
+		padding-top: rem(2px);
+		border-radius: rem(5px);
 		width: rem(126px);
-		background-color: $grey;
+		height: rem(32px);
 		position: absolute;
+		background-color: $grey;
 		left: 0;
 		top: 0;
 		opacity: 0;

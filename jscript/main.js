@@ -91,6 +91,7 @@ changeSliderItem(2, "url('images/content/burger_sandwich.png')", "Burger-sandwic
 changeSliderItem(3, "url('images/content/Shrimp_Burger.png')", "Spicy Shrimp Burger", "427");
 changeSliderItem(4, "url('images/content/Cheeseburger.png')", "Cheeseburger", "203");
 
+sliderList.style.right = "0";
 var currentRight = 0;
 var maxRight = 400;
 var minRight = 0;
@@ -151,23 +152,26 @@ for (let i = 0; i < teamAccoTrigger.length; i++) {
 var menuAccoTrigger = document.querySelectorAll(".menu__accordion-trigger__text");
 var menuAccoItem = document.querySelectorAll(".menu__accordion-item");
 
-const menuAccoClose = document.querySelector(".overlay__close");
-
-var menuAcco = document.querySelector(".menu__accordion");
-let menuAccoClone = menuAcco.cloneNode(true);
+const menuAccoClose = document.querySelector(".nav-mobile__close");
+var secondClickSame, sameClickCount = 0;
 
 for (let i = 0; i < menuAccoTrigger.length; i++) {
-	menuAccoClone.children[i].removeChild(menuAccoClone.children[i].children[1]);
-
 	menuAccoTrigger[i].addEventListener("click", function(e) {
 		e.preventDefault();
+		if ( parseFloat(getComputedStyle(document.body).width) <= 480 
+		&& secondClickSame == e.path[1]) {
+			return;
+		};
+		secondClickSame = e.path[1];
+
+		menuAccoClose.style.opacity = "1"; 
 
 		for (var j = 0; j < menuAccoItem.length; j++) {
 			if (j !== i) {
 				menuAccoItem[j].classList.remove("menu__accordion-item--active");
 				
 				//menu for phones
-				if ( parseFloat(getComputedStyle(document.body).width) < 480 ) {
+				if ( parseFloat(getComputedStyle(document.body).width) <= 480 ) {
 					menuAccoItem[j].style.position = "absolute";
 					menuAccoItem[j].style.zIndex = "-400";
 				};
@@ -177,18 +181,25 @@ for (let i = 0; i < menuAccoTrigger.length; i++) {
 
 		this.closest(".menu__accordion-item").classList.toggle("menu__accordion-item--active");
 
-		if ( parseFloat(getComputedStyle(document.body).width) < 480 ) {
-			/*menuAccoItem[i].children[1].children[1].appendChild(menuAccoClose);*/
+		if ( parseFloat(getComputedStyle(document.body).width) <= 480 ) {
+			menuAccoItem[i].children[1].children[0].
+			insertBefore(menuAccoClose, menuAccoItem[i].children[1].children[0].children[0]);
+
 			menuAccoClose.addEventListener("click", function(e) {
 				e.preventDefault();
 				menuAccoItem[i].classList.remove("menu__accordion-item--active");
+
+				for (var j = 0; j < menuAccoItem.length; j++) {
+					if (j !== i) {
+						menuAccoItem[j].style.position = "initial";
+						menuAccoItem[j].style.zIndex = "initial";
+					};
+				};
+			menuAccoClose.style.opacity = "0"; 
 			});
 		};
 	});
 };
-
-menuAccoClone.classList.add("menu__accordion-clone");
-menuAcco.appendChild(menuAccoClone);
 
 // overlay opinions
 
