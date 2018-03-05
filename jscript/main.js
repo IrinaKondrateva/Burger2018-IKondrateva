@@ -1,52 +1,3 @@
-// One Page Scroll and sending form
-
-$(document).ready(function() {
-	
-	$('#fullpage').fullpage({
-		scrollingSpeed: 800,
-		menu: "#fixed_menu"
-	});
-
-	$(".order__container").append("<div class='order__overlay'></div>");
-	var orderOverlay = $(".order__overlay").html( $("#serverMsgOlayTempl").html() ).css( "display", "none" );;
-	orderOverlay.find(".overlay-container").addClass("overlay-container--order");
-	orderOverlay.find(".overlay__content").addClass("overlay__content--order");
-	orderOverlay.find(".overlay__text").addClass("overlay__text--order");
-
-	orderOverlay.find(".button-msg").on("click", function() {
-		orderOverlay.css( "display", "none" );
-	});
-
-	$("#order_form").on("submit", submitForm);
-    
-	function submitForm(event) {
-        event.preventDefault();
-        
-        var form = $(event.target);
-        
-        ajaxForm(form).done(function(msg) {
-	    	$(".overlay__text--order").text(msg.mes);
-	    	orderOverlay.css( "display", "flex" );
-        }).fail(function(jqXHR, textStatus) {
-        	$(".overlay__text--order").text("Запрос не удался: " + textStatus);
-	    	orderOverlay.css( "display", "flex" );
-        });
-	};
-
-	var ajaxForm = function(form) {
-		var data = form.serialize(),
-    		url = form.attr("action"),
-    		method = form.attr("method");
-
-    	return $.ajax({
-	        url: url,
-	        type: method,
-	        data: data,
-	        dataType: 'JSON'   
-        })
-	};  
-});
-
 // hamgurger menu
 
 const navMobileOpen = document.querySelector(".hamburger-menu");
@@ -75,7 +26,6 @@ const arrowLeft = document.querySelector(".slider__scroll_left");
 const arrowRight = document.querySelector(".slider__scroll_right");
 var sliderList = document.querySelector(".slider__list");
 var sliderItemFirst = document.querySelector(".slider__item");
-/*$(".slider__item").clone().appendTo(".slider__list");  не сработало)) */
 
 for (let i = 0; i < 4; i++) {
 	let sliderItemFirstClone = sliderItemFirst.cloneNode(true);
@@ -245,5 +195,48 @@ function newElement() {
 	return element;
 };
 
+// sending form
+
+$(document).ready(function() {
+
+	$(".order__container").append("<div class='order__overlay'></div>");
+	var orderOverlay = $(".order__overlay").html( $("#serverMsgOlayTempl").html() ).css( "display", "none" );;
+	orderOverlay.find(".overlay-container").addClass("overlay-container--order");
+	orderOverlay.find(".overlay__content").addClass("overlay__content--order");
+	orderOverlay.find(".overlay__text").addClass("overlay__text--order");
+
+	orderOverlay.find(".button-msg").on("click", function() {
+		orderOverlay.css( "display", "none" );
+	});
+
+	$("#order_form").on("submit", submitForm);
+    
+	function submitForm(event) {
+        event.preventDefault();
+        
+        var form = $(event.target);
+        
+        ajaxForm(form).done(function(msg) {
+	    	$(".overlay__text--order").text(msg.mes);
+	    	orderOverlay.css( "display", "flex" );
+        }).fail(function(jqXHR, textStatus) {
+        	$(".overlay__text--order").text("Запрос не удался: " + textStatus);
+	    	orderOverlay.css( "display", "flex" );
+        });
+	};
+
+	var ajaxForm = function(form) {
+		var data = form.serialize(),
+    		url = form.attr("action"),
+    		method = form.attr("method");
+
+    	return $.ajax({
+	        url: url,
+	        type: method,
+	        data: data,
+	        dataType: 'JSON'   
+        })
+	};  
+});
 
 

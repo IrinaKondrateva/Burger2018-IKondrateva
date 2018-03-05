@@ -7,15 +7,11 @@
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<title>Burgers</title>
 	<link rel="stylesheet" href="css/main.css">
-	<script src="./js/svg4everybody.js"></script>
-	<!-- <script>
-	    svg4everybody();
-	</script> -->
 </head>
 <body>
 	<div class="wrapper">
-		<div class="maincontent" id="fullpage">
-	    	<section class="section burger" data-anchor="section_main">
+		<div class="maincontent">
+	    	<section class="section burger active">
 	    		<div class="container burger__container">
 					<header class="header">
 						<div class="header__left">
@@ -29,28 +25,28 @@
 							<nav class="header__nav">
 								<ul class="nav__list">
 									<li class="nav__item">
-										<a href="#section_aboutus" class="nav__link">о нас</a>
+										<a href="" class="nav__link" data-scroll="1">о нас</a>
 									</li>
 									<li class="nav__item">
-										<a href="#section_burgers" class="nav__link">бургеры</a>
+										<a href="" class="nav__link" data-scroll="2">бургеры</a>
 									</li>
 									<li class="nav__item">
-										<a href="#section_team" class="nav__link">команда</a>
+										<a href="" class="nav__link" data-scroll="3">команда</a>
 									</li>
 									<li class="nav__item">
-										<a href="#section_menu" class="nav__link">меню</a>
+										<a href="" class="nav__link" data-scroll="4">меню</a>
 									</li>
 									<li class="nav__item">
-										<a href="#section_opinions" class="nav__link">отзывы</a>
+										<a href="" class="nav__link" data-scroll="5">отзывы</a>
 									</li>
 									<li class="nav__item">
-										<a href="#section_contacts" class="nav__link">контакты</a>
+										<a href="" class="nav__link" data-scroll="7">контакты</a>
 									</li>
 								</ul>
 							</nav>
 							<div class="header__btn">
-								<a href="#section_burgers" class="button button--burger">заказать</a>
-								<a href="#" class="hamburger-menu">
+								<a href="" class="button button--burger" data-scroll="6">заказать</a>
+								<a href="" class="hamburger-menu">
 									<div class="hamburger-menu__bars"></div>
 								</a>
 							</div>
@@ -66,13 +62,13 @@
 						</div>
 					</div>
 					<div class="scroll">
-						<a href="#section_aboutus" class="scroll__icon">
+						<a href="" class="scroll__icon" data-scroll="1">
 							<img src="images/content/arrow-scroll.png" alt="Переход на следующую страницу" title="Переход на следующую страницу">
 						</a>
 					</div>
 				</div>
 			</section>
-			<section class="section best" data-anchor="section_aboutus">
+			<section class="section best">
 				<div class="container best__container">
 					<h1 class="section__title section__title--best">мы лучшие</h1>
 					<ul class="best__list">
@@ -118,12 +114,12 @@
 					</ul>
 				</div>
 			</section>
-			<section class="section slider" data-anchor="section_burgers">
+			<section class="section slider">
 				<div class="container slider__container">
-					<a href="#" class="slider__scroll slider__scroll_left">
+					<a href="" class="slider__scroll slider__scroll_left">
 						<span class="icon-arrow-scroll"></span>
 					</a>
-					<a href="#" class="slider__scroll slider__scroll_right">
+					<a href="" class="slider__scroll slider__scroll_right">
 						<span class="icon-arrow-scroll"></span>
 					</a>
 					<div class="slider__window">
@@ -147,7 +143,7 @@
 											<span class="slider-span">500</span>рублей
 										</div>
 										<div class="slider__order-btn">
-											<a href="#section_order" class="button">заказать</a>
+											<a href="" class="button" data-scroll="6">заказать</a>
 										</div>
 									</div>
 								</div>
@@ -208,7 +204,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section team" data-anchor="section_team">
+			<section class="section team">
 				<div class="container team__container">
 					<div class="team__info">
 						<h1 class="section__title section__title--team">команда</h1>
@@ -297,7 +293,7 @@
 					</div>					
 				</div>
 			</section>
-			<section class="section menu" data-anchor="section_menu">
+			<section class="section menu">
 				<div class="container menu__container">
 					<h1 class="section__title section__title--menu">
 						меню
@@ -350,7 +346,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section opinions" data-anchor="section_opinions">
+			<section class="section opinions">
 				<ul class="opinios__list">
 					<li class="opinions__item">
 						<div class="opinions__photo" style="background-image: url(images/bg/opinion-phot1.png); background-position: center center;">
@@ -457,7 +453,7 @@
 					</li>
 				</ul>
 			</section>
-			<section class="section order" data-anchor="section_order">
+			<section class="section order">
 				<div class="container order__container">
 					<h1 class="section__title section__title--order">
 						закажите доcтавку
@@ -535,7 +531,7 @@
 					</form>
 				</div>
 			</section>
-			<section class="section contacts" data-anchor="section_contacts">
+			<section class="section contacts">
 				<div class="container contacts__container">
 					<div class="contacts__map" id="map">	
 					</div>
@@ -575,58 +571,58 @@
 		</div>
 	</div>
 	<nav class="nav-mobile">
-		<a href="#" class="nav-mobile__logo">
+		<a href="" class="nav-mobile__logo">
 			<img src="images/logo.png" alt="Логотип" class="nav-mobile__logo-pic">
 		</a>
-		<a href="#" class="nav-mobile__close">
+		<a href="" class="nav-mobile__close">
 			<img src="images/content/closewhite.svg" alt="закрыть" class="close-img">
 		</a>
 		<ul class="nav-mobile__list">
 			<li class="nav-mobile__item">
-				<a href="#section_aboutus" class="nav-mobile__link">о нас</a>
+				<a href="" class="nav-mobile__link" data-scroll="1">о нас</a>
 			</li>
 			<li class="nav-mobile__item">
-				<a href="#section_burgers" class="nav-mobile__link">бургеры</a>
+				<a href="" class="nav-mobile__link" data-scroll="2">бургеры</a>
 			</li>
 			<li class="nav-mobile__item">
-				<a href="#section_team" class="nav-mobile__link">команда</a>
+				<a href="" class="nav-mobile__link" data-scroll="3">команда</a>
 			</li>
 			<li class="nav-mobile__item">
-				<a href="#section_menu" class="nav-mobile__link">меню</a>
+				<a href="" class="nav-mobile__link" data-scroll="4">меню</a>
 			</li>
 			<li class="nav-mobile__item">
-				<a href="#section_opinions" class="nav-mobile__link">отзывы</a>
+				<a href="" class="nav-mobile__link" data-scroll="5">отзывы</a>
 			</li>
 			<li class="nav-mobile__item">
-				<a href="#section_contacts" class="nav-mobile__link">контакты</a>
+				<a href="" class="nav-mobile__link" data-scroll="7">контакты</a>
 			</li>
 		</ul>
 	</nav>
 	<nav class="nav-fixed">
 		<ul class="nav-fixed__list" id="fixed_menu">
-			<li class="nav-fixed__item" data-menuanchor="section_main">
-				<a href="#section_main" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="0">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
-			<li class="nav-fixed__item" data-menuanchor="section_aboutus">
-				<a href="#section_aboutus" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="1">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
-			<li class="nav-fixed__item" data-menuanchor="section_burgers">
-				<a href="#section_burgers" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="2">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
-			<li class="nav-fixed__item" data-menuanchor="section_team">
-				<a href="#section_team" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="3">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
-			<li class="nav-fixed__item" data-menuanchor="section_menu">
-				<a href="#section_menu" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="4">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
-			<li class="nav-fixed__item" data-menuanchor="section_opinions">
-				<a href="#section_opinions" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="5">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
-			<li class="nav-fixed__item" data-menuanchor="section_order">
-				<a href="#section_order" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="6">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
-			<li class="nav-fixed__item" data-menuanchor="section_contacts">
-				<a href="#section_contacts" class="nav-fixed__link"></a>
+			<li class="nav-fixed__item" data-scroll="7">
+				<a href="" class="nav-fixed__link"></a>
 			</li>
 		</ul>	
 	</nav>
@@ -649,9 +645,15 @@
 			</div>
 		</div>	
 	</script>
-	<script src="jscript/jquery-3.3.1.min.js"></script>	
-	<script src="jscript/main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="jscript/svg4everybody.js"></script>
+	<script>
+		svg4everybody();
+	</script>		
 	<script src="jscript/yandexmap.js"></script>
-	<script src="jscript/onePageScroll.js"></script> 			
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.1/mobile-detect.min.js"></script>
+	<script src="jscript/onePageScroll.js"></script>
+	<script src="jscript/main.js"></script>		
 </body>
 </html>

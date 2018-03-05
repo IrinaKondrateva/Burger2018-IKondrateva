@@ -1,7 +1,7 @@
 .opnions__overlay {
 	position: fixed;
-	top: 0;
-	bottom: 0;
+	top: 500%;
+	height: 100%;
 	left: 0;
 	right: 0;
 	display: flex;
@@ -13,7 +13,6 @@
 
 .overlay-container {
 	position: relative;
-	top: 15.75%;
 	width: rem(460px);
 	height: rem(254px);
 	border-radius: rem(5px);

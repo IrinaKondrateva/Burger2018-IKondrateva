@@ -83,15 +83,6 @@
 	}
 }
 
-.burger__content {
-	/* margin-bottom: rem(80px); */
-
-	@include phones {
-		margin-bottom: 0;
-		min-height: rem(610px);
-	}
-}
-
 .burger__pic {
 	flex: 1 1 50%;
 	text-align: center;
