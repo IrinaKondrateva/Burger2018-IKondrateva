@@ -1,4 +1,3 @@
-# Burger2018-IKondrateva
-# Burger2018-IKondrateva
-# Burger2018-IKondrateva
-# Burger2018-IKondrateva
+Лендинг бургеров со слайдером, аккордионом, отправкой формы и one page scroll.
+
+Автор: Кондратьева Ирина
